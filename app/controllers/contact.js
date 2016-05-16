@@ -34,6 +34,11 @@ export default Ember.Controller.extend({
         this.set('message', '');
       });
 
+    },
+    willTransition() {
+      // rollbackAttributes() removes the record from the store
+      // if the model 'isNew'
+      this.set('responseMessage', '');
     }
   }
 });
